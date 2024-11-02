@@ -131,7 +131,11 @@
     .sticky-nav .logo {
       width: auto;
       height: auto;
-        background-color: red;
+        transition: opacity 0.5s;
+    }
+
+    .opaco {
+        opacity: 0.5;
     }
     
     .sticky-nav .nav-links {
@@ -179,7 +183,7 @@
 
 <body>
 
-  <header>
+  <header id="header">
       
     <span> G </span>
     <span> A </span>
@@ -207,7 +211,7 @@
   </nav>
   
   <div class="sticky-nav" id="stickyNav">
-    <img src="https://via.placeholder.com/160x80" alt="Logo" class="logo">
+    <img src="https://via.placeholder.com/160x80" alt="Logo" class="logo" id="navLogo">
     
     <div class="nav-links">
         
@@ -251,6 +255,20 @@
     <script>
 
         document.getElementById("header").addEventListener("click", function() {
+          window.location.href = "index.html";
+        });
+        
+        const imagen = document.getElementById("navLogo");
+
+        imagen.addEventListener('mouseover', () => {
+            imagen.classList.add('opaco');
+        });
+
+        imagen.addEventListener('mouseout', () => {
+            imagen.classList.remove('opaco');
+        });
+
+        document.getElementById("navLogo").addEventListener("click", function() {
           window.location.href = "index.html";
         });
         
