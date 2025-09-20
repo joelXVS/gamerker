@@ -119,7 +119,7 @@ function renderQuestion() {
   const q = currentTest.questions[currentQuestionIndex];
   const container = $('questionContainer');
   container.innerHTML = `
-    <h3>q.title}</h3>
+    <h3>${q.title}</h3>
     <div class="options">
       ${q.options.map((opt, i) => `
         <label>
