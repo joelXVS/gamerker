@@ -119,7 +119,7 @@ function renderQuestion() {
   const q = currentTest.questions[currentQuestionIndex];
   const container = $('questionContainer');
   container.innerHTML = `
-    <h3>${q.text}</h3>
+    <h3>q.title}</h3>
     <div class="options">
       ${q.options.map((opt, i) => `
         <label>
@@ -180,7 +180,7 @@ function finishExam() {
     const ans = answers[q.id];
     const correct = q.correct;
     return `<div>
-      <strong>${q.text}</strong><br/>
+      <strong>${q.title}</strong><br/>
       Tu respuesta: ${ans !== undefined ? q.options[ans] : 'Sin responder'}<br/>
       Correcta: ${q.options[correct]}
     </div>`;
